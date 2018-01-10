@@ -62,5 +62,5 @@ $issue-ctl migrate
 |subcommand|arguments|description|
 |---|---|---|
 |get||displays all open issues from `src` as JSON format|
-|post|<issue JSON path>|creates new issues to `dst` as open status|
+|post|(issue JSON path)|creates new issues to `dst` as open status|
 |migrate||gets and posts issues from `src` to `dst`|
