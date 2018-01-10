@@ -1,0 +1,32 @@
+{
+  "name": "issue-ctl",
+  "version": "0.0.1",
+  "description": "migrates Issues, searches PR from commit, ...etc",
+  "dependencies": {
+    "node-fetch": "^1.7.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.15.0"
+  },
+  "scripts": {
+    "test": "echo UnderConstruction",
+    "lint": "eslint --ignore-path .gitignore -c .eslintrc lib/",
+    "lint:fix": "npm run lint -- --fix",
+    "postinstall": ""
+  },
+  "bin": {
+    "issue-ctl": "./bin/issue-ctl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darai0512/issue-ctl.git"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "author": "Daiki Arai darai0512@yahoo.co.jp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/darai0512/issue-ctl/issues"
+  }
+}

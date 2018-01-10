@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+'use strict'
+
+const {src, dst} = require('../conf/credentials')
+const issue = require('../lib/issue')
+
+const main = async () => {
+  const subCommand = process.argv[2]
+  const action = process.argv[3]
+  switch (subCommand) {
+    case 'issue':
+      let issues = null
+      // TODO use stream in migrate
+      switch (action) {
+        case 'get':
+        case 'migrate':
+          issues = await issue.get(src.endpoint, src.repository, src.auth)
+          console.log(issues)
+        case 'post':
+        case 'migrate':
+          if (issues === null) {
+            issues = require(process.argv[4])
+          }
+          issue.post(dst.endpoint, dst.repository, dst.auth, issues)
+      }
+      break
+  }
+}
+
+main()
