@@ -24,7 +24,10 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "author": "Daiki Arai darai0512@yahoo.co.jp",
+  "author": {
+    "name": "Daiki Arai",
+    "email": "darai0512@yahoo.co.jp"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/darai0512/issue-ctl/issues"
