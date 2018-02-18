@@ -107,9 +107,9 @@ Checks on GitHub->Settings->Personal access token->Select scopes
 # References
 ## available API
 
-tool | version | available APIs
---- | --- | ---
-GitHub |  | Rest v3 or GraphQL
-GitHub Enterprise | >= 2.10 | Rest v3 or GraphQL
-| < 2.10 | Rest v3
-GitLab(in the future???) | ??? | ???
+|tool|version|available APIs|
+| --- | --- | --- |
+|GitHub| |Rest v3 or GraphQL|
+|GitHub Enterprise|>= 2.10|Rest v3 or GraphQL|
+||< 2.10|Rest v3|
+|GitLab(in the future???)|???|???|
