@@ -58,6 +58,10 @@ Checks on GitHub->Settings->Personal access token->Select scopes
 
 ```
 $issue-ctl migrate
+# or, get issues on local
+$issue-ctl get > /tmp/issues.json
+# post by environment variables after editting issues
+$DST_ENDPOINT=api.github.com DST_REPOSITORY=darai0512/test DST_AUTH=darai0512:*** issue-ctl post /tmp/issues.json
 ```
 
 |subcommand|arguments|description|

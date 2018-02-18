@@ -1,6 +1,6 @@
 {
   "name": "issue-ctl",
-  "version": "0.0.2",
+  "version": "0.1.2",
   "description": "migrates Issues, searches PR from commit, ...etc",
   "dependencies": {},
   "devDependencies": {

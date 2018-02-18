@@ -2,12 +2,12 @@
 module.exports =
 {
   "src": {
-    "endpoint": process.env.DST_ENDPOINT || "api.github.com",
+    "endpoint": process.env.SRC_ENDPOINT || "api.github.com",
     "repository": process.env.SRC_REPOSITORY || "org/repo",
     "auth": process.env.SRC_AUTH || "oauth2token"
   },
   "dst": {
-    "endpoint": process.env.SRC_ENDPOINT || "your.enterprise.url",
+    "endpoint": process.env.DST_ENDPOINT || "your.enterprise.url",
     "repository": process.env.DST_REPOSITORY || "org/repo",
     "auth": process.env.DST_AUTH || "username:passwd"
   }
