@@ -1,0 +1,13 @@
+---
+  parserOptions:
+    ecmaVersion: 2017
+  env:
+    browser: false
+    node: true
+    es6: true
+  rules:
+    quotes: [2, "single"]
+    new-cap: 2
+    curly: 0
+    no-unused-vars: 2
+    semi: ["error", "always"]

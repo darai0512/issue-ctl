@@ -1,18 +1,16 @@
 {
   "name": "issue-ctl",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "migrates Issues, searches PR from commit, ...etc",
-  "dependencies": {
-    "node-fetch": "^1.7.3"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "eslint": "^4.15.0"
+    "eslint": "^4.18.0",
+    "jest": "^22.3.0"
   },
   "scripts": {
-    "test": "echo UnderConstruction",
-    "lint": "eslint --ignore-path .gitignore -c .eslintrc lib/",
-    "lint:fix": "npm run lint -- --fix",
-    "postinstall": ""
+    "test": "jest",
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "npm run lint -- --fix"
   },
   "bin": {
     "issue-ctl": "./bin/issue-ctl"
