@@ -3,14 +3,14 @@
 'use strict';
 
 const {src, dst} = require('../conf/credentials');
-const issue = require('../lib/issue');
+const {get, post} = require('../lib/issue');
 
 const main = async () => {
   const subCommand = process.argv[2];
   let issues;
   // TODO use stream in migrate
   if (subCommand === 'get' || subCommand === 'migrate') {
-    issues = await issue.get(src.endpoint, src.repository, src.auth);
+    issues = await get(src.endpoint, src.repository, src.auth).catch((e) => console.log(e) || []);
     if (subCommand === 'get') {
       console.log(JSON.stringify(issues));
     } else if (subCommand === 'migrate') {
@@ -21,8 +21,11 @@ const main = async () => {
     if (subCommand === 'post') {
       issues = require(process.argv[3]);
     }
-    issue.post(dst.endpoint, dst.repository, dst.auth, issues);
+    for (const issue of issues) {
+      const posted = post(dst.endpoint, dst.repository, dst.auth, issue).catch((e) => console.error(e) || {});
+      console.log(`posted old issue#${issue.number} to new issue#${posted.number}`);
+    }
   }
 };
 
-main().catch((err) => console.error(err));
+main().catch(console.error);

@@ -16,11 +16,8 @@ You can use this as CLI or Client Library.
 ## CLI
 ### Install
 
-```
-# stable
+```sh
 $npm i -g issue-ctl
-# or
-$yarn i -g issue-ctl
 ```
 
 ### Setup
@@ -28,7 +25,7 @@ $yarn i -g issue-ctl
 Sets credencial information to your [environment variables](./conf/credentials.js).
 
 Or, you can rewrite configure file.
-```
+```sh
 $sudo vim $(dirname $(which issue-ctl))/../lib/node_modules/issue-ctl/conf/credentials.js
 module.exports =
 {
@@ -56,7 +53,7 @@ Checks on GitHub->Settings->Personal access token->Select scopes
 
 ### Execute
 
-```
+```sh
 $issue-ctl migrate
 # or, get issues on local
 $issue-ctl get > /tmp/issues.json
@@ -73,19 +70,23 @@ $DST_ENDPOINT=api.github.com DST_REPOSITORY=darai0512/test DST_AUTH=darai0512:**
 ## Client Library
 ### Install
 
-```
+```sh
 # stable
 $npm i issue-ctl
-# or
-$yarn i issue-ctl
 
 # beta version
 $npm i git+https://git@github.com/darai0512/issue-ctl
+## or
+$git clone https://github.com/darai0512/issue-ctl.git
+$cd ./issue-ctl
+$npm link
+$cd (your directory)
+$npm link issue-ctl
 ```
 
 ### Usage
 
-```
+```js
 const {issue} = require('issue-ctl');
 
 const main = async () => {
@@ -94,7 +95,7 @@ const main = async () => {
   await issue.post('your.enterprise.url', 'org/repo', 'oauth2token', issues);
 };
 
-main().catch((err) => console.error(err));
+main().catch(console.error);
 ```
 
 # Authentication
